@@ -1,0 +1,239 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: beige;
+}
+
+header {
+  background: #222;
+  color: rgb(231, 34, 34);
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 10px;
+  color: #ddd;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: white;
+}
+
+.content-section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* --- ### --- INTRO STYLING --- ### --- */
+.fade-section {
+  transition: opacity 0.8s ease-out;
+}
+
+.fade-section.faded {
+  opacity: 0;
+}
+
+/* --- ### --- MAP STYLING --- ### --- */
+.map-section {
+  width: 100vw; /* full viewport width */
+  margin: 0; /* ignore auto margins */
+  padding: 20px 0; /* optional top/bottom spacing */
+}
+
+#mapHeading {
+  text-align: center;
+}
+
+.theme-buttons {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.theme-buttons button {
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Segoe UI";
+}
+
+.theme-buttons button:hover {
+  background-color: #c0392b;
+}
+
+#mapid {
+  height: 75vh; /* 90% of viewport height */
+  width: 90%; /* full width */
+  margin: 0 auto;
+  border: 2px solid #444;
+  border-radius: 10px;
+}
+
+/* --- ### --- MODAL STYLING --- ### --- */
+.modal {
+  display: none; /* stays hidden */
+  position: fixed;
+  inset: 0; /* shorthand: top/left/right/bottom 0 */
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Modal box */
+.modal-content {
+  background: #fff;
+  max-width: 650px;
+  width: 100%;
+  padding: 30px 40px;
+  border-radius: 12px;
+  position: relative;
+  text-align: center;
+  animation: fadeIn 0.25s ease;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Close (X) */
+.close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+}
+.close:hover {
+  color: #e53935;
+}
+
+/* Modal title */
+.modal-content h2 {
+  margin: 0;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #222;
+}
+
+/* Image */
+#modalImage {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Text */
+.modal-content p {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: #444;
+  text-align: left;
+}
+
+/* Navigation --- */
+.modal-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.modal-nav button {
+  background: #333;
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.modal-nav button:hover {
+  background: #e53935;
+  transform: translateY(-2px);
+}
+
+/* --- ### --- REFERENCE SECTION STYLING --- ### --- */
+#references {
+  border-top: 2px solid #444; /* clear line above section */
+  padding-top: 40px;
+  margin-top: 60px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+#references h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.reference-list {
+  list-style-type: decimal; /* numbered list like academic reference */
+  padding-left: 20px;
+}
+
+.reference-list li {
+  margin-bottom: 10px;
+}
+
+.reference-list a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.reference-list a:hover {
+  text-decoration: underline;
+}
+
+/* --- ### --- FOOTER SECTION STYLING --- ### --- */
+#pageFooter {
+  background-color: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  margin-top: 60px;
+  border-top: 2px solid #444;
+}
+
+#pageFooter a {
+  color: #ffc004;
+  text-decoration: none;
+}
+
+#pageFooter a:hover {
+  text-decoration: underline;
+}
