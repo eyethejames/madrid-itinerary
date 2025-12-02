@@ -73,6 +73,17 @@ nav a:hover {
   background-color: #c0392b;
 }
 
+#themeInfo {
+  text-align: center;
+}
+
+#themeText {
+  text-align: center;
+  padding: 10px 10px;
+  max-width: 1200px;
+  margin: auto;
+}
+
 #mapid {
   height: 75vh; /* 90% of viewport height */
   width: 90%; /* full width */
@@ -96,16 +107,16 @@ nav a:hover {
 /* Modal box */
 .modal-content {
   background: #fff;
-  max-width: 650px;
+  max-width: 1200px;
   width: 100%;
   padding: 30px 40px;
   border-radius: 12px;
   position: relative;
   text-align: center;
   animation: fadeIn 0.25s ease;
-
-  display: flex;
-  flex-direction: column;
+  display: block;
+  box-sizing: border-box;
+  /* flex-direction: column; */
   gap: 20px;
 }
 
@@ -144,9 +155,13 @@ nav a:hover {
 
 /* Image */
 #modalImage {
-  width: 100%;
-  max-height: 350px;
-  object-fit: cover;
+  max-width: 100%; /* scale up to 90% of viewport width */
+  max-height: 50vh; /* scale up to 90% of viewport height */
+  width: auto;
+  height: auto;
+  object-fit: contain; /* keep entire image visible */
+  display: block;
+  margin: 0 auto;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
