@@ -35,7 +35,14 @@ window.addEventListener("scroll", () => {
 });
 
 // Initialize map
-const map = L.map("mapid", { minZoom: 14 }).setView([40.4168, -3.7038], 15);
+const map = L.map("mapid", {
+  minZoom: 14,
+  scrollWheelZoom: true,
+  wheelDebounceTime: 10,
+  wheelPxPerZoomLevel: 120,
+  zoomSnap: 0, // allow fractional zoom
+  zoomDelta: 0.25, // scroll steps
+}).setView([40.4268, -3.7038], 14.5);
 
 map.scrollWheelZoom.disable();
 
