@@ -16,6 +16,10 @@ header {
   text-align: center;
 }
 
+nav p {
+  color: white;
+}
+
 nav a {
   margin: 0 10px;
   color: #ddd;
@@ -33,6 +37,10 @@ nav a:hover {
 }
 
 /* --- ### --- INTRO STYLING --- ### --- */
+.intro h2 {
+  text-align: center;
+}
+
 .fade-section {
   transition: opacity 0.8s ease-out;
 }
@@ -194,6 +202,11 @@ nav a:hover {
 .modal-nav button:hover {
   background: #e53935;
   transform: translateY(-2px);
+}
+
+/* --- ### --- CONCLUSION STYLING --- ### --- */
+#conclusion h2 {
+  text-align: center;
 }
 
 /* --- ### --- REFERENCE SECTION STYLING --- ### --- */
