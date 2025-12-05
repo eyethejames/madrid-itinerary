@@ -4,8 +4,8 @@ window.addEventListener("scroll", () => {
   const scrollY = window.scrollY;
 
   // Start fading out after 50px, fully gone by 300px
-  const introFadeStart = 50;
-  const introFadeEnd = 300;
+  const introFadeStart = 100;
+  const introFadeEnd = 400;
 
   if (scrollY <= introFadeStart) {
     intro.style.opacity = 1;
