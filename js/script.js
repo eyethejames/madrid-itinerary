@@ -222,13 +222,13 @@ function showTheme(theme) {
   }
 
   // Show which theme is shown
-  themeInfo.textContent =
+  themeInfo.innerHTML =
     theme === "A"
-      ? "Theme A: Imperial Foundation and Symbols"
+      ? "Theme: Imperial Foundation and Symbols <em>(press an icon for description)</em>"
       : theme === "B"
-      ? "Theme B: Material Culture and Elite Memory of Empire"
+      ? "Theme: Material Culture and Elite Memory of Empire <em>(press an icon for description)</em>"
       : theme === "C"
-      ? "Theme C: Knowledge, Science & Global Exchange in the Early Modern Empire"
+      ? "Theme: Knowledge, Science & Global Exchange in the Early Modern Empire <em>(press an icon for description)</em>"
       : "";
   themeInfo.hidden = false;
 
@@ -270,6 +270,7 @@ const themeAData = [
       that the plaza suggests that Spain’s colonization of the new world is something to be proudly 
       memorialized in public space.`,
     image: "assets/images/plazaColon.jpg",
+    readMore: "https://en.wikipedia.org/wiki/Plaza_de_Col%C3%B3n",
   },
   {
     title: "Monumento a Isabel la Católica",
@@ -283,6 +284,8 @@ const themeAData = [
     the Catholic, under whose reign national unity and the discovery of the Americas took place”. This further 
     displays the great impact that Isabella had over the beginnings of the spanish empire.`,
     image: "assets/images/estatuadeIsabel.JPG",
+    readMore:
+      "https://en.wikipedia.org/wiki/Monument_to_Isabella_the_Catholic_(Madrid)",
   },
   {
     title: "Iglesia de San Ginés",
@@ -296,6 +299,7 @@ const themeAData = [
       whether or not the crocodile in the church today is the same as the one that was brought from the new 
       world, but nonetheless, it remains as a symbol of European curiosity during the early modern era.`,
     image: "assets/images/iglesiaSanGines.jpg",
+    readMore: "https://en.wikipedia.org/wiki/San_Gin%C3%A9s,_Madrid",
   },
 ];
 
@@ -317,6 +321,7 @@ const themeBData = [
       monuments, and urban planning to make Madrid a living symbol of empire, translating early modern power 
       into the organization and experience of the city itself.`,
     image: "assets/images/plazaCibeles.jpg",
+    readMore: "https://en.wikipedia.org/wiki/Plaza_de_Cibeles",
   },
   {
     title: "Palacio de Liria",
@@ -333,6 +338,7 @@ const themeBData = [
       its collections the rituals, hierarchies, and aesthetic languages that bound metropolis and empire 
       together.`,
     image: "assets/images/palacioLiria.jpg",
+    readMore: "https://en.wikipedia.org/wiki/Liria_Palace",
   },
   {
     title: "Banco de España",
@@ -350,6 +356,7 @@ const themeBData = [
       ideological project, translating the legacy of the empire into the institutions that structured Spain’s 
       modern national identity.`,
     image: "assets/images/bancoEspana.jpg",
+    readMore: "https://en.wikipedia.org/wiki/Bank_of_Spain",
   },
 ];
 
@@ -368,6 +375,8 @@ const themeCData = [
       but also a material symbol of imperial reach and the global circulation of knowledge in the early modern 
       world.`,
     image: "assets/images/realJardinBotanico.jpg",
+    readMore:
+      "https://en.wikipedia.org/wiki/Real_Jard%C3%ADn_Bot%C3%A1nico_de_Madrid",
   },
   {
     title: "Monasterio de las Descalzas Reales",
@@ -385,6 +394,8 @@ const themeCData = [
       imperial learning: a space where the spiritual, scientific, and cultural products of the empire were 
       collected, interpreted, and transformed into symbols of both dynastic piety and global dominion.`,
     image: "assets/images/monasterioDescalzas.jpg",
+    readMore:
+      "https://www.patrimonionacional.es/coleccion/archivo-general-de-palacio/informacion-general",
   },
   {
     title: "Real Academia de la Historia",
@@ -402,6 +413,7 @@ const themeCData = [
       distilled into state-sponsored knowledge, turning the raw materials of empire into the historical 
       foundations of Bourbon authority and Spain’s early modern imperial identity.`,
     image: "assets/images/academiaHistoria.jpg",
+    readMore: "https://www.rah.es/",
   },
 ];
 
@@ -423,6 +435,7 @@ function updateModalContent() {
   modalTitle.textContent = item.title;
   modalDescription.textContent = item.description;
   modalImage.src = item.image;
+  moreInfo.href = item.readMore;
 }
 
 // Navigate prev/next
