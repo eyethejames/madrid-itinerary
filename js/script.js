@@ -422,7 +422,6 @@ let currentThemeId = "A";
 
 // Function to open modal
 function openModal(themeId, themeData, index) {
-  document.querySelector("header").style.display = "none";
   currentThemeId = themeId;
   currentThemeData = themeData;
   currentIndex = index;
@@ -459,11 +458,9 @@ nextBtn.onclick = () => {
 // Close modal
 closeBtn.onclick = () => {
   modal.style.display = "none";
-  //document.querySelector("header").style.display = "block";
 };
 
 // Close modal if click outside content
 window.onclick = (event) => {
   if (event.target === modal) modal.style.display = "none";
-  //document.querySelector("header").style.display = "block";
 };
