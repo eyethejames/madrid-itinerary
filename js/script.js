@@ -459,7 +459,7 @@ nextBtn.onclick = () => {
 // Close modal
 closeBtn.onclick = () => {
   modal.style.display = "none";
-  document.querySelector("header").style.display = "block";
+  //document.querySelector("header").style.display = "block";
 };
 
 // Close modal if click outside content
