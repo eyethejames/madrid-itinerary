@@ -10,9 +10,25 @@ body {
 }
 
 header {
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999; */
   background: #222;
   color: rgb(231, 34, 34);
-  padding: 15px;
+  padding: 5px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  background: #222;
+  padding: 5px 0;
   text-align: center;
 }
 
@@ -22,7 +38,7 @@ nav p {
 
 nav a {
   margin: 0 10px;
-  color: #ddd;
+  color: rgb(171, 20, 20);
   text-decoration: none;
 }
 
@@ -66,14 +82,14 @@ nav a:hover {
 }
 
 .theme-buttons button {
-  background-color: #c0392b;
+  background-color: rgb(171, 10, 10);
   color: white;
   border: none;
   padding: 8px 15px;
   margin: 0 5px;
   border-radius: 5px;
   cursor: pointer;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-family: "Segoe UI";
 }
 
@@ -213,7 +229,7 @@ nav a:hover {
 #references {
   border-top: 2px solid #444; /* clear line above section */
   padding-top: 40px;
-  margin-top: 60px;
+  margin-top: 10px;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;

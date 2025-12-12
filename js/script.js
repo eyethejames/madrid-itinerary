@@ -4,8 +4,8 @@ window.addEventListener("scroll", () => {
   const scrollY = window.scrollY;
 
   // Start fading out after 50px, fully gone by 300px
-  const introFadeStart = 100;
-  const introFadeEnd = 400;
+  const introFadeStart = 200;
+  const introFadeEnd = 800;
 
   if (scrollY <= introFadeStart) {
     intro.style.opacity = 1;
@@ -96,34 +96,34 @@ const academiaHistoriaIcon = L.icon({
 // ----- Show THEME A on map: Imperial Foundation -----
 const plazaColon = L.marker([40.425, -3.6889], { icon: plazaColonIcon })
   .addTo(map)
-  .on("click", () => openModal(themeAData, 0));
+  .on("click", () => openModal("A", themeAData, 0));
 
 const estatuaIsabelColon = L.marker([40.440328, -3.690703], {
   icon: monumentoIsabelIcon,
 })
   .addTo(map)
-  .on("click", () => openModal(themeAData, 1));
+  .on("click", () => openModal("A", themeAData, 1));
 
 const iglesiaSanGines = L.marker([40.4171, -3.7069], {
   icon: iglesiaSanGinesIcon,
 })
   .addTo(map)
-  .on("click", () => openModal(themeAData, 2));
+  .on("click", () => openModal("A", themeAData, 2));
 
 const themeAMarkers = [plazaColon, estatuaIsabelColon, iglesiaSanGines];
 
 // ----- Show THEME B on map: Material Culture -----
 const plazaCibeles = L.marker([40.4193, -3.6931], { icon: plazaCibelesIcon })
   .addTo(map)
-  .on("click", () => openModal(themeBData, 0));
+  .on("click", () => openModal("B", themeBData, 0));
 
 const palacioLiria = L.marker([40.4277, -3.7124], { icon: palacioLiriaIcon })
   .addTo(map)
-  .on("click", () => openModal(themeBData, 1));
+  .on("click", () => openModal("B", themeBData, 1));
 
 const bancoEspana = L.marker([40.4183, -3.6939], { icon: bancoEspanaIcon })
   .addTo(map)
-  .on("click", () => openModal(themeBData, 2));
+  .on("click", () => openModal("B", themeBData, 2));
 
 const themeBMarkers = [plazaCibeles, palacioLiria, bancoEspana];
 
@@ -132,19 +132,19 @@ const realJardinBotanico = L.marker([40.4111, -3.6911], {
   icon: realJardinBotanicoIcon,
 })
   .addTo(map)
-  .on("click", () => openModal(themeCData, 0));
+  .on("click", () => openModal("C", themeCData, 0));
 
 const descalzasReales = L.marker([40.4183, -3.7062], {
   icon: descalzasRealesIcon,
 })
   .addTo(map)
-  .on("click", () => openModal(themeCData, 1));
+  .on("click", () => openModal("C", themeCData, 1));
 
 const academiaHistoria = L.marker([40.4135, -3.6989], {
   icon: academiaHistoriaIcon,
 })
   .addTo(map)
-  .on("click", () => openModal(themeCData, 2));
+  .on("click", () => openModal("C", themeCData, 2));
 
 const themeCMarkers = [realJardinBotanico, descalzasReales, academiaHistoria];
 
@@ -200,13 +200,13 @@ function showTheme(theme) {
 
   if (theme === "A") {
     markersToShow = themeAMarkers;
-    polylineToShow = polylineA;
+    // polylineToShow = polylineA;
   } else if (theme === "B") {
     markersToShow = themeBMarkers;
-    polylineToShow = polylineB;
+    // polylineToShow = polylineB;
   } else if (theme === "C") {
     markersToShow = themeCMarkers;
-    polylineToShow = polylineC;
+    // polylineToShow = polylineC;
   } else if (theme === "all") {
     markersToShow = allMarkers;
   }
@@ -224,11 +224,11 @@ function showTheme(theme) {
   // Show which theme is shown
   themeInfo.innerHTML =
     theme === "A"
-      ? "Theme: Imperial Foundation and Symbols <em>(press an icon for description)</em>"
+      ? "Theme: Imperial Foundation and Symbols"
       : theme === "B"
-      ? "Theme: Material Culture and Elite Memory of Empire <em>(press an icon for description)</em>"
+      ? "Theme: Material Culture and Elite Memory of Empire"
       : theme === "C"
-      ? "Theme: Knowledge, Science & Global Exchange in the Early Modern Empire <em>(press an icon for description)</em>"
+      ? "Theme: Knowledge, Science & Global Exchange in the Early Modern Empire"
       : "";
   themeInfo.hidden = false;
 
@@ -252,6 +252,7 @@ document.querySelectorAll(".theme-buttons button").forEach((button) => {
 // Modal elements
 const modal = document.getElementById("itemModal");
 const modalTitle = document.getElementById("modalTitle");
+const modalTheme = document.getElementById("modalTheme");
 const modalImage = document.getElementById("modalImage");
 const modalDescription = document.getElementById("modalDescription");
 const closeBtn = document.querySelector(".modal .close");
@@ -270,7 +271,7 @@ const themeAData = [
       that the plaza suggests that Spain’s colonization of the new world is something to be proudly 
       memorialized in public space.`,
     image: "assets/images/plazaColon.jpg",
-    readMore: "https://en.wikipedia.org/wiki/Plaza_de_Col%C3%B3n",
+    // readMore: "",
   },
   {
     title: "Monumento a Isabel la Católica",
@@ -284,8 +285,7 @@ const themeAData = [
     the Catholic, under whose reign national unity and the discovery of the Americas took place”. This further 
     displays the great impact that Isabella had over the beginnings of the spanish empire.`,
     image: "assets/images/estatuadeIsabel.JPG",
-    readMore:
-      "https://en.wikipedia.org/wiki/Monument_to_Isabella_the_Catholic_(Madrid)",
+    // readMore: "https://en.wikipedia.org/wiki/Monument_to_Isabella_the_Catholic_(Madrid)",
   },
   {
     title: "Iglesia de San Ginés",
@@ -299,7 +299,7 @@ const themeAData = [
       whether or not the crocodile in the church today is the same as the one that was brought from the new 
       world, but nonetheless, it remains as a symbol of European curiosity during the early modern era.`,
     image: "assets/images/iglesiaSanGines.jpg",
-    readMore: "https://en.wikipedia.org/wiki/San_Gin%C3%A9s,_Madrid",
+    // readMore: "https://en.wikipedia.org/wiki/San_Gin%C3%A9s,_Madrid",
   },
 ];
 
@@ -321,7 +321,7 @@ const themeBData = [
       monuments, and urban planning to make Madrid a living symbol of empire, translating early modern power 
       into the organization and experience of the city itself.`,
     image: "assets/images/plazaCibeles.jpg",
-    readMore: "https://en.wikipedia.org/wiki/Plaza_de_Cibeles",
+    // readMore: "https://en.wikipedia.org/wiki/Plaza_de_Cibeles",
   },
   {
     title: "Palacio de Liria",
@@ -338,7 +338,7 @@ const themeBData = [
       its collections the rituals, hierarchies, and aesthetic languages that bound metropolis and empire 
       together.`,
     image: "assets/images/palacioLiria.jpg",
-    readMore: "https://en.wikipedia.org/wiki/Liria_Palace",
+    // readMore: "https://en.wikipedia.org/wiki/Liria_Palace",
   },
   {
     title: "Banco de España",
@@ -356,7 +356,7 @@ const themeBData = [
       ideological project, translating the legacy of the empire into the institutions that structured Spain’s 
       modern national identity.`,
     image: "assets/images/bancoEspana.jpg",
-    readMore: "https://en.wikipedia.org/wiki/Bank_of_Spain",
+    // readMore: "https://en.wikipedia.org/wiki/Bank_of_Spain",
   },
 ];
 
@@ -375,8 +375,7 @@ const themeCData = [
       but also a material symbol of imperial reach and the global circulation of knowledge in the early modern 
       world.`,
     image: "assets/images/realJardinBotanico.jpg",
-    readMore:
-      "https://en.wikipedia.org/wiki/Real_Jard%C3%ADn_Bot%C3%A1nico_de_Madrid",
+    // readMore: "https://en.wikipedia.org/wiki/Real_Jard%C3%ADn_Bot%C3%A1nico_de_Madrid",
   },
   {
     title: "Monasterio de las Descalzas Reales",
@@ -394,8 +393,7 @@ const themeCData = [
       imperial learning: a space where the spiritual, scientific, and cultural products of the empire were 
       collected, interpreted, and transformed into symbols of both dynastic piety and global dominion.`,
     image: "assets/images/monasterioDescalzas.jpg",
-    readMore:
-      "https://www.patrimonionacional.es/coleccion/archivo-general-de-palacio/informacion-general",
+    // readMore: "https://www.patrimonionacional.es/coleccion/archivo-general-de-palacio/informacion-general",
   },
   {
     title: "Real Academia de la Historia",
@@ -413,17 +411,20 @@ const themeCData = [
       distilled into state-sponsored knowledge, turning the raw materials of empire into the historical 
       foundations of Bourbon authority and Spain’s early modern imperial identity.`,
     image: "assets/images/academiaHistoria.jpg",
-    readMore: "https://www.rah.es/",
+    // readMore: "https://www.rah.es/",
   },
 ];
 
 // Current item index
 let currentIndex = 0;
-let currentTheme = themeAData;
+let currentThemeData = themeAData;
+let currentThemeId = "A";
 
 // Function to open modal
-function openModal(themeData, index) {
-  currentTheme = themeData;
+function openModal(themeId, themeData, index) {
+  document.querySelector("header").style.display = "none";
+  currentThemeId = themeId;
+  currentThemeData = themeData;
   currentIndex = index;
   updateModalContent();
   modal.style.display = "flex";
@@ -431,27 +432,38 @@ function openModal(themeData, index) {
 
 // Function to update modal content
 function updateModalContent() {
-  const item = currentTheme[currentIndex];
+  const item = currentThemeData[currentIndex];
+  modalTheme.textContent =
+    currentThemeId === "A"
+      ? "Current theme: Imperial Foundation and Symbols"
+      : currentThemeId === "B"
+      ? "Current theme: Material Culture and Elite Memory of Empire"
+      : "Current theme: Knowledge, Science & Global Exchange in the Early Modern Empire";
   modalTitle.textContent = item.title;
   modalDescription.textContent = item.description;
   modalImage.src = item.image;
-  moreInfo.href = item.readMore;
+  // moreInfo.href = item.readMore;
 }
 
 // Navigate prev/next
 prevBtn.onclick = () => {
-  currentIndex = (currentIndex - 1 + currentTheme.length) % currentTheme.length;
+  currentIndex =
+    (currentIndex - 1 + currentThemeData.length) % currentThemeData.length;
   updateModalContent();
 };
 nextBtn.onclick = () => {
-  currentIndex = (currentIndex + 1) % currentTheme.length;
+  currentIndex = (currentIndex + 1) % currentThemeData.length;
   updateModalContent();
 };
 
 // Close modal
-closeBtn.onclick = () => (modal.style.display = "none");
+closeBtn.onclick = () => {
+  modal.style.display = "none";
+  document.querySelector("header").style.display = "block";
+};
 
 // Close modal if click outside content
 window.onclick = (event) => {
   if (event.target === modal) modal.style.display = "none";
+  //document.querySelector("header").style.display = "block";
 };
